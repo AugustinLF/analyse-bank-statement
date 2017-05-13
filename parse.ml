@@ -36,16 +36,17 @@ let change_to_string {
         operator;
         amount;
         currency;
-      } = Printf.sprintf "%s %s %.2f%s" date operator (amount) currency
+      } = Printf.sprintf "%s %s %.2f%s" date operator amount currency
 
 let print_cell change_option = match change_option with
   | None -> ()
   | Some change -> print_endline (change_to_string change)
 
-
-let cells = File.lines_of "source.csv"
+let extract_lines source = File.lines_of source
   |> List.of_enum
-  |> List.drop 3
-  |> List.map from_line_to_change
+  |> List.drop 3  (* The first three lines are not relevant *)
 
-let () = List.iter print_cell cells
+
+let () = extract_lines "source.csv"
+  |> List.map from_line_to_change
+  |> List.iter print_cell
