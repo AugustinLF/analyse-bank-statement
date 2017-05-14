@@ -1,5 +1,4 @@
 source.csv
 .DS_Store
-*.cmi
-*.cmo
-parse
+parse.byte
+_build

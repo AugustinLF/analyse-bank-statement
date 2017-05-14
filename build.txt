@@ -1,0 +1,6 @@
+Raw ocamlc
+// It's tedious, ocamlbuild will be simpler
+ocamlfind ocamlc -package batteries -linkpkg operation.mli operation.ml parse.ml -o parse
+
+Ocamlbuild
+ocamlbuild -use-ocamlfind -pkgs 'batteries' 'parse.byte'
