@@ -2,3 +2,4 @@ source.csv
 .DS_Store
 parse.byte
 _build
+*Test.byte

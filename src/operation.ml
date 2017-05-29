@@ -8,6 +8,10 @@ type t = {
   currency: string;
 }
 
+(* Since t is a private type, the fields are not publicly available. So passing by getters is
+needed *)
+let get_amount t = t.amount
+
 let get_value value =
   (* Floats are written the French way, e.g. 4,2 instead of 4.2 *)
   let (_, english_value) = String.replace value "," "." in

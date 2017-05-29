@@ -1,3 +1,6 @@
 PKG Batteries
-B _build
+PKG oUnit
 S src
+S tests
+B _build/src
+B _build/tests
